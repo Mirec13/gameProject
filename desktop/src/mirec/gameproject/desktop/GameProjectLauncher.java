@@ -8,6 +8,6 @@ import mirec.gameproject.game.GameProjectGame;
 public class GameProjectLauncher {
     public static void main (String[] args) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-        new LwjglApplication(new MyGdxGame(), config);
+        new LwjglApplication(new GameProjectGame(), config);
     }
 }

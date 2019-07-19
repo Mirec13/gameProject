@@ -1,22 +1,18 @@
 package mirec.gameproject.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 
-public class GameProjectGame extends ApplicationAdapter {
+public class GameProjectGame extends Game {
     private SpriteBatch batch;
-    private TextureAtlas textureAtlas;
-    Animation<TextureRegion> animation;
-    private float elapsedTime = 0;
 
     @Override
     public void create () {
         batch = new SpriteBatch();
-        textureAtlas = new TextureAtlas(Gdx.files.internal("minipersons.txt"));
-        animation = new Animation(1/15f, textureAtlas.getRegions());
+
     }
 
     @Override
@@ -25,9 +21,6 @@ public class GameProjectGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        //sprite.draw(batch);
-        elapsedTime += Gdx.graphics.getDeltaTime();
-        batch.draw(animation.getKeyFrame(elapsedTime, true), 0.0f, 0.0f);
         batch.end();
     }
 
@@ -39,6 +32,5 @@ public class GameProjectGame extends ApplicationAdapter {
     @Override
     public void dispose () {
         batch.dispose();
-        textureAtlas.dispose();
     }
 }

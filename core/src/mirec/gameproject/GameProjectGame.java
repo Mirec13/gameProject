@@ -8,16 +8,17 @@ import com.badlogic.gdx.graphics.g2d.*;
 import mirec.screens.PlayScreen;
 
 public class GameProjectGame extends Game {
+    //so called container which contains all render-able objects
     public SpriteBatch batch;
 
     @Override
     public void create () {
         batch = new SpriteBatch();
         setScreen(new PlayScreen(this));
-
     }
 
     @Override
+    //delegate render to Screen which are currently used
     public void render () {
         super.render();
     }

@@ -1,4 +1,4 @@
-package mirec.gameproject.game;
+package mirec.gameproject;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -8,6 +8,9 @@ import com.badlogic.gdx.graphics.g2d.*;
 import mirec.screens.PlayScreen;
 
 public class GameProjectGame extends Game {
+    public static final int width = 400;
+    public static final int height = 208;
+
     //so called container which contains all render-able objects
     public SpriteBatch batch;
 

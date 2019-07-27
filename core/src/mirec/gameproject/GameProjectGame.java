@@ -8,8 +8,8 @@ import com.badlogic.gdx.graphics.g2d.*;
 import mirec.screens.PlayScreen;
 
 public class GameProjectGame extends Game {
-    public static final int width = 400;
-    public static final int height = 208;
+    public static final int WIDTH = 500;
+    public static final int HEIGHT = 300;
 
     //so called container which contains all render-able objects
     public SpriteBatch batch;

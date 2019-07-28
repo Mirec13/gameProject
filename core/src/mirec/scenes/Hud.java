@@ -40,7 +40,7 @@ public class Hud {
         level = 0;
 
         hudCam = new OrthographicCamera();
-        viewPort = new FitViewport(GameProjectGame.width, GameProjectGame.height, hudCam);
+        viewPort = new FitViewport(GameProjectGame.WIDTH, GameProjectGame.HEIGHT, hudCam);
         stage = new Stage(viewPort, batch);
 
         Table table = new Table();
@@ -67,7 +67,6 @@ public class Hud {
         table.add(actualScoreLabel).expandX();
 
         stage.addActor(table);
-
     }
 
 }

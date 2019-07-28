@@ -8,33 +8,51 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import mirec.gameobjcects.StaticBox2d;
 import mirec.gameproject.GameProjectGame;
 import mirec.scenes.Hud;
 
 public class PlayScreen implements Screen {
-
     private GameProjectGame game;
     private OrthographicCamera gameCam;
     private Viewport gameViewPort;
+
     private Hud hud;//heads up display
+
+    //variables for tilemap loading and rendering
     private TmxMapLoader loadLevel;
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
+
+    private StaticBox2d staticBox = new StaticBox2d();
 
 
     //new game
     public PlayScreen (GameProjectGame game) {
         this.game = game;
+
+        //set or main cam and screen adaptation via ViewPort
         gameCam = new OrthographicCamera();
         gameViewPort = new FitViewport(GameProjectGame.WIDTH, GameProjectGame.HEIGHT, gameCam);
+
+        //create hud for score, lives and so on
         hud = new Hud(game.batch);
 
+        //load our tilemap
         loadLevel = new TmxMapLoader();
         map = loadLevel.load("level1.tmx");
         renderer = new OrthogonalTiledMapRenderer(map);
+
+        //initialize where should look the camera
         gameCam.position.set(gameViewPort.getWorldWidth() / 2, gameViewPort.getWorldHeight() / 2, 0);
+
+        staticBox.createRectangleShape(map, 2);
+
     }
 
     //load new level or resume where you started
@@ -68,19 +86,28 @@ public class PlayScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        //update if there are any changes by delta time
         update(delta);
 
+        //clear the screen with black
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+
+        //define how it needs to be treated, there we define matrix as combined
         game.batch.setProjectionMatrix(gameCam.combined);
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
+        //render our game map
         renderer.render();
+
+        //render our box2dDebugLines
+        staticBox.render(gameCam);
 
         game.batch.begin();
         game.batch.end();
 
+        //draw our heads up display with predefined information
         hud.stage.draw();
     }
 

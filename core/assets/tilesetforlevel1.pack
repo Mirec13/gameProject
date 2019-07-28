@@ -1,0 +1,19 @@
+
+tilesetforlevel1.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+tilestgeneral2
+  rotate: false
+  xy: 1, 1
+  size: 448, 350
+  orig: 448, 350
+  offset: 0, 0
+  index: -1
+tilestgeneral3
+  rotate: false
+  xy: 451, 95
+  size: 317, 256
+  orig: 317, 256
+  offset: 0, 0
+  index: -1

@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import mirec.gameobjcects.StaticBox2d;
@@ -25,8 +27,11 @@ public class PlayScreen implements Screen {
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
 
-    private StaticBox2d staticBox = new StaticBox2d();
+    //there are box2d bodies which can interact whit each other
+    private World world = new World(new Vector2(0,0), true);
 
+    //class for creating static objects predefined in tiled map
+    private StaticBox2d staticBox = new StaticBox2d(world);
 
     //new game
     public PlayScreen (GameProjectGame game) {

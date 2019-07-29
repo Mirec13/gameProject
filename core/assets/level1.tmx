@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="87">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="102">
  <tileset firstgid="1" source="tilesetforlevel1.tsx"/>
  <tileset firstgid="513" source="someobjects.tsx"/>
  <imagelayer id="13" name="background">
@@ -12,6 +12,10 @@
  </layer>
  <objectgroup id="5" name="ground">
   <object id="10" x="0" y="384" width="1600" height="32"/>
+  <object id="98" x="940.333" y="234.667" width="8" height="8"/>
+  <object id="99" x="972.333" y="235" width="8" height="8"/>
+  <object id="100" x="1004.33" y="234.667" width="8" height="8"/>
+  <object id="101" x="1036" y="234.667" width="8" height="8"/>
  </objectgroup>
  <objectgroup id="11" name="destructableBoxes">
   <object id="73" x="225.333" y="256" width="32" height="32"/>
@@ -21,71 +25,39 @@
   <object id="77" x="256" y="256" width="32" height="32"/>
   <object id="78" x="352" y="289.333" width="32" height="32"/>
   <object id="79" x="384" y="289.333" width="32" height="32"/>
-  <object id="80" x="384" y="258.667" width="32" height="32"/>
-  <object id="81" x="416" y="258.667" width="32" height="32"/>
-  <object id="82" x="446.667" y="258.667" width="32" height="32"/>
-  <object id="83" x="926.667" y="256.333" width="32" height="32"/>
+  <object id="80" x="384" y="256.667" width="32" height="32"/>
+  <object id="81" x="416" y="256.667" width="32" height="32"/>
+  <object id="82" x="447.667" y="256.667" width="32" height="32"/>
+  <object id="83" x="928.667" y="256.333" width="32" height="32"/>
   <object id="84" x="961.667" y="256.333" width="32" height="32"/>
-  <object id="85" x="991" y="256.333" width="32" height="32"/>
+  <object id="85" x="993" y="256.333" width="31.6667" height="32"/>
   <object id="86" x="1025" y="256" width="32" height="32"/>
  </objectgroup>
  <objectgroup id="12" name="indestructableBoxes">
-  <object id="33" x="126.667" y="254.667" width="32" height="32"/>
+  <object id="33" x="126.667" y="255.667" width="32" height="32"/>
   <object id="34" x="-117.333" y="125.333" width="1.33333"/>
-  <object id="50" x="158.667" y="254.667" width="32" height="32"/>
-  <object id="51" x="192" y="254.667" width="32" height="32"/>
+  <object id="50" x="158.667" y="255.667" width="32" height="32"/>
+  <object id="51" x="192" y="255.667" width="32" height="32"/>
   <object id="65" x="480" y="256" width="30.6667" height="32"/>
   <object id="66" x="512" y="256" width="32" height="32"/>
   <object id="67" x="544" y="256" width="32" height="32"/>
-  <object id="68" x="605.333" y="222.667" width="32" height="32"/>
-  <object id="69" x="669.333" y="189.333" width="32" height="32"/>
-  <object id="70" x="734.667" y="158.667" width="32" height="32"/>
+  <object id="68" x="607.333" y="223.667" width="32" height="32"/>
+  <object id="69" x="672.333" y="192.333" width="32" height="32"/>
+  <object id="70" x="735.667" y="159.667" width="32" height="32"/>
   <object id="71" x="800" y="192" width="32" height="32"/>
-  <object id="72" x="864" y="222.667" width="32" height="32"/>
+  <object id="72" x="864" y="223.667" width="32" height="32"/>
  </objectgroup>
  <objectgroup id="7" name="smallCoins">
-  <object id="11" x="241" y="242">
-   <ellipse/>
-  </object>
-  <object id="12" x="273" y="241">
-   <ellipse/>
-  </object>
-  <object id="13" x="305" y="241">
-   <ellipse/>
-  </object>
-  <object id="14" x="337" y="273">
-   <ellipse/>
-  </object>
-  <object id="15" x="337" y="241">
-   <ellipse/>
-  </object>
-  <object id="17" x="369" y="242">
-   <ellipse/>
-  </object>
-  <object id="18" x="369" y="274">
-   <ellipse/>
-  </object>
-  <object id="19" x="400" y="241">
-   <ellipse/>
-  </object>
-  <object id="20" x="432" y="241">
-   <ellipse/>
-  </object>
-  <object id="21" x="465" y="240">
-   <ellipse/>
-  </object>
-  <object id="22" x="945" y="242">
-   <ellipse/>
-  </object>
-  <object id="23" x="976" y="241">
-   <ellipse/>
-  </object>
-  <object id="24" x="1008" y="241">
-   <ellipse/>
-  </object>
-  <object id="25" x="1040" y="240">
-   <ellipse/>
-  </object>
+  <object id="87" x="236" y="234.667" width="8" height="8"/>
+  <object id="89" x="268" y="235" width="8" height="8"/>
+  <object id="90" x="300.333" y="235" width="8" height="8"/>
+  <object id="91" x="332.333" y="235" width="8" height="8"/>
+  <object id="92" x="364.333" y="234.667" width="8" height="8"/>
+  <object id="93" x="397.333" y="235" width="8" height="8"/>
+  <object id="94" x="428.333" y="235" width="8" height="8"/>
+  <object id="95" x="460.667" y="235.333" width="8" height="8"/>
+  <object id="96" x="364" y="266.333" width="8" height="8"/>
+  <object id="97" x="332" y="267" width="8" height="8"/>
  </objectgroup>
  <objectgroup id="8" name="bigCoins">
   <object id="29" x="671.667" y="161" width="32" height="32"/>

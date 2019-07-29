@@ -2,8 +2,10 @@ package mirec.gameobjcects;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.objects.CircleMapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
@@ -19,7 +21,6 @@ public class StaticBox2d {
 
     //its create predefined objects in our tile map so we should interact with them
     public void createRectangleShape(TiledMap map, int whichObj) {
-
         for(MapObject obj : map.getLayers().get(whichObj).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) obj).getRectangle();
 

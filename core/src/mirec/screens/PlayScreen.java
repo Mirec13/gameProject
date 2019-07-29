@@ -4,13 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import mirec.gameobjcects.StaticBox2d;
@@ -51,7 +47,11 @@ public class PlayScreen implements Screen {
         //initialize where should look the camera
         gameCam.position.set(gameViewPort.getWorldWidth() / 2, gameViewPort.getWorldHeight() / 2, 0);
 
-        staticBox.createRectangleShape(map, 2);
+
+        //adding all tile map objects into box2d world
+        for (int i = 0; i < 7; i++) {
+            staticBox.createRectangleShape(map, i + 2);
+        }
 
     }
 
@@ -73,7 +73,7 @@ public class PlayScreen implements Screen {
     public void handleInput(float delta) {
         if (Gdx.input.isTouched()) {
             gameCam.position.x += 200 * delta;
-            System.out.println(delta);
+            //System.out.println(delta);
         }
     }
 

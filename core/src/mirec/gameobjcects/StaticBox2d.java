@@ -2,22 +2,24 @@ package mirec.gameobjcects;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.CircleMapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
 public class StaticBox2d {
 
-    private World world = new World(new Vector2(0,0), true);
+    private World world;
     private Box2DDebugRenderer b2dr = new Box2DDebugRenderer();
     private BodyDef bdef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fdef = new FixtureDef();
     private Body body;
+
+    public StaticBox2d(World world) {
+        this.world = world;
+    }
 
     //its create predefined objects in our tile map so we should interact with them
     public void createRectangleShape(TiledMap map, int whichObj) {
